@@ -8,6 +8,13 @@
 </div>
 <hr>
 
+## 📦 ダウンロード ／ Download
+<ul>
+    <li>
+        <a href="https://github.com/gamma-410/CAMEL/archive/refs/heads/main.zip">CAMEL (Download)</a>
+    </li>
+</ul>
+
 ## 📕 文法 ／ Grammar
 <ul>
     <li>
@@ -19,4 +26,8 @@
 </ul>
 
 ## 🌹 ライセンス ／ License
-<a href="LICENSE">Apache License</a>
+<ul>
+    <li>
+        <a href="LICENSE">Apache License</a>
+    </li>
+</ul>
