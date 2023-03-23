@@ -25,7 +25,7 @@
     </li>
 </ul>
 
-## 🌹 ライセンス ／ License
+## 🦜 ライセンス ／ License
 <ul>
     <li>
         <a href="LICENSE">Apache License</a>
