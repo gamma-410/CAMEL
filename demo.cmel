@@ -1,18 +1,20 @@
 @camelCode
-# 変数a,b,cを宣言して、それぞれ初期値を代入する
-let a = 10
-let b = 3
-let c = 7
 
-# aとbを足し、変数dに代入する
-add a b d
+    # 変数a,b,cを宣言して、それぞれ初期値を代入する
+    let a = 10
+    let b = 3
+    let c = 7
 
-# 変数dとcを掛け、変数eに代入する
-mul d c e
+    # aとbを足し、変数dに代入する
+    add a b d
 
-# 変数eを2で割った商を変数fに代入する
-let two = 2
-div e two f
+    # 変数dとcを掛け、変数eに代入する
+    mul d c e
 
-# 変数fを出力する
-output f
+    # 変数eを2で割った商を変数fに代入する
+    let two = 2
+    div e two f
+
+    # 変数fを出力する
+    output f
+

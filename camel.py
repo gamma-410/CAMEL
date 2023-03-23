@@ -20,6 +20,15 @@ def run_program(file_name):
         for line in f:
             execute_line(line.strip())
 
+# int の判定
+def is_num(a):
+    try:
+        int(a)
+    except:
+        return False
+    return True
+
+
 # 1行分のコマンドを実行する関数
 def execute_line(line):
 
@@ -28,21 +37,21 @@ def execute_line(line):
     
     # コマンドをスペースで分割
     words = line.split()
-    
+
     # コマンドがコメントアウトの場合
     if words[0] == "#":
         return
     # コマンドが入力コマンドの場合
     if words[0] == "input":
-        input_var = input("Enter a value: ")
+        input_var = input("> ")
         variables[words[1]] = int(input_var)
     # コマンドが出力コマンドの場合
     elif words[0] == "output":
         print(variables[words[1]])
     # コマンドが変数宣言コマンドの場合
     elif words[0] == "let":
-        # variables[words[1]] = int(words[3])
-        if words[3].isdigit():
+        # words[3] が 数字だっら True ... !
+        if is_num(words[3]):
             variables[words[1]] = int(words[3])
         else:
             variables[words[1]] = variables[words[3]]
