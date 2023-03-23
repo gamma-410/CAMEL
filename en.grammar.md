@@ -1,6 +1,12 @@
 # Grammar
 CAMEL (Computation And Mathematics Expression Language) is a programming language designed for simple mathematical calculations. Here is the summary of CAMEL's syntax:
 
+## CAMEL CODE declaration
+In CAMEL, the following declaration is always required when starting to write code:  
+```
+@camelCode
+```
+
 ## Variable Declaration
 ```
 let variable_name = value

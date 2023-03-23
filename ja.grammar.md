@@ -1,6 +1,12 @@
 # 文法
 CAMEL (Computation And Mathematics Expression Language)は、簡単な数式計算を行うためのプログラミング言語です。以下に、CAMELの文法をまとめます。  
 
+## CAMEL CODE 宣言
+CAMEL では、コードを書き始める時に、必ず以下の宣言が必要です。  
+```
+@camelCode
+```
+
 ## 変数の宣言
 ```
 let 変数名 = 値
