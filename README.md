@@ -1,6 +1,6 @@
 <div align="center">
     <br>
-    <img src="camel.svg" width="450">
+    <img src="camel.svg" width="100%">
     <br><br>
 </div>
 <hr>
