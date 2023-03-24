@@ -5,14 +5,14 @@
 </div>
 <hr>
 
-## 📦 ダウンロード ／ Download
+## 📦 Download
 <ul>
     <li>
         <a href="https://github.com/gamma-410/CAMEL/archive/refs/heads/main.zip">CAMEL (Download)</a>
     </li>
 </ul>
 
-## 📕 文法 ／ Grammar
+## ✏️ Grammar
 <ul>
     <li>
         <a href="https://gamma-410.github.io/CAMEL/ja.grammar">日本語</a>  
@@ -22,7 +22,7 @@
     </li>
 </ul>
 
-## 🦜 ライセンス ／ License
+## 🦜 License
 <ul>
     <li>
         <a href="LICENSE">Apache License</a>
