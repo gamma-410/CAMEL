@@ -1,9 +1,7 @@
 <div align="center">
     <br>
-    <img src="camel.png" width="200">
+    <img src="camel.svg" width="450">
     <br><br>
-    <p><b>C</b>ode <b>A</b>nd <b>M</b>athematical <b>E</b>xpression <b>L</b>anguage</p>
-    <br>
 </div>
 <hr>
 
