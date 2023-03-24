@@ -18,10 +18,10 @@
 ## 📕 文法 ／ Grammar
 <ul>
     <li>
-        <a href="ja.grammar.md">日本語</a>  
+        <a href="ja.grammar">日本語</a>  
     </li>
     <li>
-        <a href="en.grammar.md">English</a>
+        <a href="en.grammar">English</a>
     </li>
 </ul>
 
