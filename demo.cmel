@@ -1,20 +1,25 @@
 @camelCode
 
-    # 変数a,b,cを宣言して、それぞれ初期値を代入する
-    let a = 10
-    let b = 3
-    let c = 7
+    let x int = 10
+    let y int = 5
 
-    # aとbを足し、変数dに代入する
-    add a b d
+    show int x
+    show int y
 
-    # 変数dとcを掛け、変数eに代入する
-    mul d c e
+    + x y = z
+    show int z
 
-    # 変数eを2で割った商を変数fに代入する
-    let two = 2
-    div e two f
+    copy int x copyX
+    show int copyX
 
-    # 変数fを出力する
-    output f
+    get age int Enter_your_age:
+    show int age
 
+    let name str = "John"
+    show str name
+
+    file r en.grammar.md
+
+    showAll
+
+    ! This line is commented out and will not be executed.
