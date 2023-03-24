@@ -15,7 +15,7 @@
 ## ✏️ Grammar
 <ul>
     <li>
-        <a href="https://gamma-410.github.io/CAMEL/ja.grammar">日本語</a>  
+        <a href="https://gamma-410.github.io/CAMEL/ja.grammar">Japanese</a>  
     </li>
     <li>
         <a href="https://gamma-410.github.io/CAMEL/en.grammar">English</a>
