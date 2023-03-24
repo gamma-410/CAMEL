@@ -1,44 +1,83 @@
-# Grammar
-CAMEL (Computation And Mathematics Expression Language) is a programming language designed for simple mathematical calculations. Here is the summary of CAMEL's syntax:
+# A Tour of CAMEL
+CAMEL (Computation And Mathematics Expression Language) is a programming language developed for performing simple mathematical calculations.
 
-## CAMEL CODE declaration
-In CAMEL, the following declaration is always required when starting to write code:  
-```
+## CAMEL Code Declaration
+When starting to write code in CAMEL, the following declaration is necessary:
+```css
 @camelCode
 ```
 
+## Types
+CAMEL has two types: "string" and "integer".
+- "String" is represented as "str".
+- "Integer" is represented as "int".
+
 ## Variable Declaration
+Declare a variable and assign an initial value to it. The value can be an integer or the value of another variable.
+```bash
+let variable_name type = value
 ```
-let variable_name = value
+
+## Variable Deletion
+Delete the data of a variable.
+```css
+del variable_name
 ```
-Declares a variable and assigns an initial value. The value can be an integer or the value of another variable.  
+
+## Variable Duplication
+Duplicate the data of a variable to another variable.
+```go
+copy type original_variable_name duplicated_variable_name
+```
 
 ## Input
+Input a value from the keyboard and assign it to a variable. The input value becomes the specified type.
+```arduino
+get variable_name type message
 ```
-input variable_name
-```
-Prompts the user to enter a value, which is then stored in the variable. The input value is of integer type.    
 
 ## Output
+Display the value of a variable.
+```bash
+show type variable_name
 ```
-output variable_name
-```
-Displays the value of a variable.  
 
 ## Arithmetic Operations
+Perform arithmetic operations on variable_name1 and variable_name2, and assign the result to a specified variable.
+```java
++ variable_name1 variable_name2 = result_variable_name
+- variable_name1 variable_name2 = result_variable_name
+* variable_name1 variable_name2 = result_variable_name
+/ variable_name1 variable_name2 = result_variable_name
+% variable_name1 variable_name2 = result_variable_name
 ```
-add variable_name1 variable_name2 variable_name_to_store_result
-sub variable_name1 variable_name2 variable_name_to_store_result
-mul variable_name1 variable_name2 variable_name_to_store_result
-div variable_name1 variable_name2 variable_name_to_store_result
-```
-Performs arithmetic operations on the values of variable_name1 and variable_name2, and stores the result in the specified variable.  
 
-## Comment
+## Output All Variables
+Output string-type and integer-type variables respectively.
 ```
-# comment
+showAll
 ```
-Lines starting with "#" are comments and are ignored during execution.  
+
+## File Operations
+The argument can be "r", "w", or "a".  
+"r" is used for reading. The entire file is output.  
+"w" and "a" can be used for writing. The difference is whether to save completely or save with additional content.  
+The data to be written to the file is assigned to a variable and then used.  
+```bash
+file argument file_name
+file argument file_name type variable_name
+```
+
+## Commenting
+Lines starting with "!" are commented out. Commented-out lines are not executed.
+```diff
+! comment
+```
 
 ## Error Handling
-If there is an error in the CAMEL program, an error message is displayed.  
+If there is an error in the CAMEL program, an error message is displayed.
+
+- Declaration error
+- Type error
+- Variable error
+- Command error

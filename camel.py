@@ -1,80 +1,134 @@
 import sys
 
-# CAMELの宣言
 CAMEL_CODE_DECLARATION = "@camelCode"
 
-# プログラミング言語のキーワード
-keywords = ["input", "output", "let", "add", "sub", "mul", "div"]
+str_variable = {}
+int_variable = {}
 
-# 変数を格納するための辞書
-variables = {}
 
-# プログラムを実行する関数
 def run_program(file_name):
-    with open(file_name, 'r') as f:
+    with open(file_name) as f:
         first_line = f.readline()
         if not first_line.startswith(CAMEL_CODE_DECLARATION):
-            print("Error: Invalid program declaration.")
+            print("DeclarationError: Invalid program declaration.")
             return
-        
+
         for line in f:
             execute_line(line.strip())
 
-# int の判定
-def is_num(a):
-    try:
-        int(a)
-    except:
-        return False
-    return True
 
-
-# 1行分のコマンドを実行する関数
 def execute_line(line):
 
     if not line:
         return
-    
-    # コマンドをスペースで分割
+
     words = line.split()
 
-    # コマンドがコメントアウトの場合
-    if words[0] == "#":
+    if words[0] == "!":
         return
-    # コマンドが入力コマンドの場合
-    if words[0] == "input":
-        input_var = input("> ")
-        variables[words[1]] = int(input_var)
-    # コマンドが出力コマンドの場合
-    elif words[0] == "output":
-        print(variables[words[1]])
-    # コマンドが変数宣言コマンドの場合
+
+    if words[0] == "get":
+        if words[2] == "str":
+            try:
+                input_var = input(words[3])
+                str_variable[words[1]] = str(input_var)
+            except:
+                print("TypeError: Type is not 'String'.")
+        elif words[2] == "int":
+            try:
+                input_var = input(words[3])
+                int_variable[words[1]] = int(input_var)
+            except:
+                print("TypeError: Type is not 'Int'.")
+    elif words[0] == "show":
+        if words[1] == "str":
+            try:
+                print(str_variable[words[2]])
+            except:
+                print(f"VariableError: Variable '{words[2]}' not found.")
+        elif words[1] == "int":
+            try:
+                print(int_variable[words[2]])
+            except:
+                print(f"VariableError: Variable '{words[2]}' not found.")
+
     elif words[0] == "let":
-        # words[3] が 数字だっら True ... !
-        if is_num(words[3]):
-            variables[words[1]] = int(words[3])
+        if words[2] == "str":
+            str_variable[words[1]] = str(words[4])
+        elif words[2] == "int":
+            int_variable[words[1]] = int(words[4])
+
+    elif words[0] in ["+", "-", "*", "/", "%"]:
+        op1 = int_variable[words[1]]
+        op2 = int_variable[words[2]]
+        if words[0] == "+":
+            ans = op1 + op2
+        elif words[0] == "-":
+            ans = op1 - op2
+        elif words[0] == "*":
+            ans = op1 * op2
+        elif words[0] == "/":
+            ans = op1 / op2
+        elif words[0] == "%":
+            ans = op1 % op2
+        int_variable[words[4]] = ans
+
+    elif words[0] == "del":
+        if words[1] == "str":
+            del str_variable[words[2]]
+        elif words[1] == "int":
+            del int_variable[words[2]]
         else:
-            variables[words[1]] = variables[words[3]]
+            print(f"CommandError: Variable '{words[2]}' not found.")
 
-    # コマンドが四則演算コマンドの場合
-    elif words[0] in ["add", "sub", "mul", "div"]:
-        operand1 = variables[words[1]]
-        operand2 = variables[words[2]]
-        if words[0] == "add":
-            result = operand1 + operand2
-        elif words[0] == "sub":
-            result = operand1 - operand2
-        elif words[0] == "mul":
-            result = operand1 * operand2
-        elif words[0] == "div":
-            result = operand1 / operand2
-        variables[words[3]] = result
+    elif words[0] == "copy":
+        if words[1] == "str":
+            copyVariableNameA = str_variable[words[2]]
+            str_variable[words[3]] = copyVariableNameA
 
-    # コマンドがキーワードでない場合
+        elif words[1] == "int":
+            copyVariableNameA = int_variable[words[2]]
+            int_variable[words[3]] = copyVariableNameA
+
+    elif words[0] == "showAll":
+        print("\nString Variables:\n")
+        for key, value in str_variable.items():
+            print(f"- {key} : {value}")
+        print("\nInteger Variables:\n")
+        for key, value in int_variable.items():
+            print(f"- {key} : {value}")
+        print("\n")
+
+    elif words[0] == "file":
+        if words[1] == "r":
+            f = open(words[2], 'r')
+            data = f.read()
+            print(data)
+            f.close()
+        elif words[1] == "w":
+            f = open(words[2], 'w')
+            if words[3] == "str":
+                val_name = str_variable[words[4]]
+                f.write(val_name+"\n")
+                f.close()
+            elif words[3] == "int":
+                val_name = int_variable[words[4]]
+                f.write(val_name+"\n")
+                f.close()
+        elif words[1] == "a":
+            f = open(words[2], 'a')
+            if words[3] == "str":
+                val_name = str_variable[words[4]]
+                f.write(val_name+"\n")
+                f.close()
+            elif words[3] == "int":
+                val_name = int_variable[words[4]]
+                f.write(val_name+"\n")
+                f.close()
     else:
-        print(f"Invalid keyword: {words[0]}")
+        print(f"CommandError: Invalid keyword: '{words[0]}'.")
+
 
 if __name__ == "__main__":
-    # コマンドライン引数からファイル名を取得してプログラムを実行
     file_name = sys.argv[1]
     run_program(file_name)
