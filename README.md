@@ -2,7 +2,6 @@
     <br>
     <img src="camel.png" width="200">
     <br><br>
-    <h3><b>CAMEL</b></h3>
     <p><b>C</b>ode <b>A</b>nd <b>M</b>athematical <b>E</b>xpression <b>L</b>anguage</p>
     <br>
 </div>
