@@ -1,6 +1,6 @@
 <div align="center">
     <br>
-    <img src="camel.svg" width="100%">
+    <img src="assets/camel.svg" width="100%">
     <br><br>
 </div>
 <hr>
@@ -15,10 +15,10 @@
 ## ✏️ Grammar
 <ul>
     <li>
-        <a href="https://gamma-410.github.io/CAMEL/ja.grammar">Japanese</a>  
+        <a href="https://gamma-410.github.io/CAMEL/md/ja.grammar">Japanese</a>  
     </li>
     <li>
-        <a href="https://gamma-410.github.io/CAMEL/en.grammar">English</a>
+        <a href="https://gamma-410.github.io/CAMEL/md/en.grammar">English</a>
     </li>
 </ul>
 
